@@ -1,0 +1,36 @@
+{
+  "name": "inventory-saas-server",
+  "version": "1.0.0",
+  "projectId": "inventory-saas",
+  "description": "Backend API for Inventory SaaS",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npx prisma generate && node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "@reduxjs/toolkit": "^2.11.2",
+    "axios": "^1.13.4",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.563.0",
+    "react-hook-form": "^7.71.1",
+    "react-redux": "^9.2.0",
+    "recharts": "^3.7.0",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prisma": "^5.10.2"
+  }
+}
