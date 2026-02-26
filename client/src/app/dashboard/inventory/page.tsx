@@ -51,7 +51,8 @@ export default function InventoryPage() {
     const [imagePreview, setImagePreview] = useState<string | null>(null);
 
     const { register, handleSubmit, reset, setValue, watch, formState: { errors, isSubmitting } } = useForm<ProductForm>({
-        resolver: zodResolver(productSchema),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        resolver: zodResolver(productSchema) as any,
         defaultValues: {
             quantity: 0,
             price: 0,
