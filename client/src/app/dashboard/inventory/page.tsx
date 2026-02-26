@@ -31,11 +31,11 @@ const CATEGORIES = ["General", "Electronics", "Clothing", "Home & Garden", "Toys
 const productSchema = z.object({
     name: z.string().min(1, "Name is required"),
     sku: z.string().min(1, "SKU is required"),
-    quantity: z.preprocess((val) => Number(val), z.number().min(0, "Quantity must be 0 or more")),
-    price: z.preprocess((val) => Number(val), z.number().min(0, "Price must be 0 or more")),
+    quantity: z.coerce.number().min(0, "Quantity must be 0 or more"),
+    price: z.coerce.number().min(0, "Price must be 0 or more"),
     category: z.string().optional(),
     image: z.string().optional(),
-    costPrice: z.preprocess((val) => Number(val), z.number().min(0, "Cost Price must be 0 or more")).optional(),
+    costPrice: z.coerce.number().min(0, "Cost Price must be 0 or more").optional(),
 });
 
 type ProductForm = z.infer<typeof productSchema>;
