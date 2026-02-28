@@ -5,3 +5,10 @@ build
 .DS_Store
 coverage
 .vscode
+
+# Demo and generated media files (large files - not needed in repo)
+Demo_*.png
+Demo_*.mp4
+demo_video.mp4
+stockease_*.png
+*.webp
