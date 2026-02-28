@@ -4,7 +4,11 @@ const nextConfig = {
         ignoreBuildErrors: true,
     },
     rewrites: async () => {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+        const isProd = process.env.NODE_ENV === 'production';
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL ||
+            (isProd
+                ? "https://inventory-saas-backend-ntiv.onrender.com"
+                : "http://localhost:3001");
         return [
             {
                 source: "/api/:path*",
